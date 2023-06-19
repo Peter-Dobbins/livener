@@ -233,7 +233,7 @@ p {
   
   .animate {
     opacity: 0; /* Initially hide the elements */
-    transform: translatex(30%); /* Move the elements to the right (out of view) */
+    transform: translateX(30%); /* Move the elements to the right (out of view) */
      /* Apply transition for smooth animation */
   }
 
