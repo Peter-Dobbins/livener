@@ -21,32 +21,24 @@ titleElement.addEventListener("mouseout", function() {
 
 // this is for the scrolling events that brings the writing in from the side
 
-var elements = document.querySelectorAll('.animate');
-var currentIndex = 0;
-var lastScrollTop = 0;
-var delay = 1000; // Adjust the delay value as needed
-
 window.addEventListener('scroll', function() {
-  var st = window.pageYOffset || document.documentElement.scrollTop;
-  var scrollDirection = st > lastScrollTop ? 'down' : 'up';
-  lastScrollTop = st;
-
-  if (scrollDirection === 'down') {
-    var positionFromTop = elements[currentIndex].getBoundingClientRect().top;
+  var elements = document.querySelectorAll('.animate');
+  
+  for (var i = 0; i < elements.length; i++) {
+    var element = elements[i];
+    var positionFromTop = element.getBoundingClientRect().top;
+    
+    // Calculate the delay based on the index of the element
+    var delay = i * 500; // Adjust the delay value as needed
     
     if (positionFromTop - window.innerHeight <= 0) {
-      setTimeout(function() {
-        elements[currentIndex].classList.add('animate-in');
-        currentIndex++;
-      }, delay);
-    }
-  } else if (scrollDirection === 'up') {
-    if (currentIndex > 0) {
-      currentIndex--;
-      elements[currentIndex].classList.remove('animate-in');
+      setTimeout(function(element) {
+        element.classList.add('animate-in');
+      }, delay, element);
     }
   }
 });
+
 
 
 
