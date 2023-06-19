@@ -29,7 +29,7 @@ window.addEventListener('scroll', function() {
     var positionFromTop = element.getBoundingClientRect().top;
     
     // Calculate the delay based on the index of the element
-    var delay = i * 500; // Adjust the delay value as needed
+    var delay = i * 1000; // Adjust the delay value as needed
     
     if (positionFromTop - window.innerHeight <= 0) {
       setTimeout(function(element) {
