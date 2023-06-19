@@ -27,17 +27,14 @@ window.addEventListener('scroll', function() {
   for (var i = 0; i < elements.length; i++) {
     var element = elements[i];
     var positionFromTop = element.getBoundingClientRect().top;
+    var windowHeight = window.innerHeight;
     
-    // Calculate the delay based on the index of the element
-    var delay = i * 1000; // Adjust the delay value as needed
-    
-    if (positionFromTop - window.innerHeight <= 0) {
-      setTimeout(function(element) {
-        element.classList.add('animate-in');
-      }, delay, element);
+    if (positionFromTop - windowHeight <= 0) {
+      element.classList.add('animate-in');
     }
   }
 });
+
 
 
 
