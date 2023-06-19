@@ -6,6 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Livener</title>
+  <style>
+    .animate {
+      opacity: 0;
+      transform: translateX(30%);
+      transition: opacity 0.8s, transform 1s;
+    }
+
+    .animate-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
 </head>
 
 <body>
@@ -25,15 +37,17 @@
     <div class="animate">
       <p class="para4">You need a little,</p>
     </div>
-    <img src="images/Title.svg" class="title2">
+    <div>
+      <img src="images/Title.svg" class="title2">
+    </div>
     <div class="animate">
       <p class="para6">The new face cream for men,</p>
     </div>
-    <img src="images/strap.svg" class="strap2">
-    <img src="images/bottle.svg" class="bottle2">
+    <div>
+      <img src="images/strap.svg" class="strap2">
+      <img src="images/bottle.svg" class="bottle2">
+    </div>
   </div>
 
-  <script src="script.js"></script>
-</body>
-
-</html>
+  <script>
+    window.addEventListener('scroll', function () {
